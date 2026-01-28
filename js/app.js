@@ -105,7 +105,7 @@ function initializeApp() {
     localStorage.removeItem('familyfeud_roomcode');
     localStorage.removeItem('familyfeud_gamestate_' + roomCode);
     localStorage.removeItem('familyfeud_role');
-    window.location.href = 'http://localhost:8000';
+    window.location.href = window.location.origin;
   });
 
   copyCodeBtn.addEventListener('click', () => {

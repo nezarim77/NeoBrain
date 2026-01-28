@@ -1,5 +1,10 @@
 // Home page controller - handle room creation and viewer join
 
+// Get base URL dynamically (works for both localhost and production)
+function getBaseUrl() {
+  return window.location.origin;
+}
+
 function generateRoomCode() {
   // Generate unique code: random part + timestamp part
   const random = Math.random().toString(36).substring(2, 6).toUpperCase();
@@ -15,7 +20,7 @@ function goToCreateRoom() {
   localStorage.setItem('familyfeud_role', 'host');
   // Clear old game states
   localStorage.removeItem(`familyfeud_gamestate_${roomCode}`);
-  window.location.href = 'http://localhost:8000/host';
+  window.location.href = getBaseUrl() + '/host';
 }
 
 function goToExistingRoom() {
@@ -24,7 +29,7 @@ function goToExistingRoom() {
   
   localStorage.setItem('familyfeud_roomcode', roomCode.toUpperCase());
   localStorage.setItem('familyfeud_role', 'host');
-  window.location.href = 'http://localhost:8000/host';
+  window.location.href = getBaseUrl() + '/host';
 }
 
 function joinRoom() {
@@ -42,7 +47,7 @@ function joinRoom() {
     roomCode: localStorage.getItem('familyfeud_roomcode'),
     role: localStorage.getItem('familyfeud_role')
   });
-  window.location.href = 'http://localhost:8000/viewer';
+  window.location.href = getBaseUrl() + '/viewer';
 }
 
 // Allow Enter key on room code input

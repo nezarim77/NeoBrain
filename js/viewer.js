@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeViewer();
   } else {
     console.error('No room code found! User should input room code from home page.');
-    window.location.href = 'http://localhost:8000';
+    window.location.href = window.location.origin;
   }
 });
 
@@ -54,7 +54,7 @@ function initializeViewer() {
       // Clear room code when exiting viewer
       localStorage.removeItem('familyfeud_roomcode');
       localStorage.removeItem('familyfeud_role');
-      window.location.href = 'http://localhost:8000';
+      window.location.href = window.location.origin;
     });
   }
 
