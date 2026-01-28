@@ -1,12 +1,16 @@
 // Home page controller - handle room creation and viewer join
 
 function generateRoomCode() {
-  return Math.random().toString(36).substring(2, 8).toUpperCase();
+  // Generate unique code: random part + timestamp part
+  const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+  const timestamp = Date.now().toString(36).substring(7).toUpperCase();
+  return (random + timestamp).substring(0, 6);
 }
 
 function goToCreateRoom() {
   // Generate new unique room code every time
   const roomCode = generateRoomCode();
+  console.log('Creating new room with code:', roomCode);
   localStorage.setItem('familyfeud_roomcode', roomCode);
   localStorage.setItem('familyfeud_role', 'host');
   // Clear old game states
