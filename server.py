@@ -12,11 +12,11 @@ class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         
         # Route mapping
         if path == '/':
-            # Serve home.html for root
-            self.path = '/home.html'
-        elif path.startswith('/host'):
-            # Serve index.html for /host
+            # Serve index.html for root (homepage)
             self.path = '/index.html'
+        elif path.startswith('/host'):
+            # Serve host.html for /host
+            self.path = '/host.html'
         elif path.startswith('/viewer'):
             # Serve viewer.html for /viewer
             self.path = '/viewer.html'
