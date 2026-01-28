@@ -5,10 +5,12 @@ function generateRoomCode() {
 }
 
 function goToCreateRoom() {
+  // Generate new unique room code every time
   const roomCode = generateRoomCode();
   localStorage.setItem('familyfeud_roomcode', roomCode);
   localStorage.setItem('familyfeud_role', 'host');
-  localStorage.removeItem('familyfeud_gamestate');
+  // Clear old game states
+  localStorage.removeItem(`familyfeud_gamestate_${roomCode}`);
   window.location.href = 'http://localhost:8000/host';
 }
 

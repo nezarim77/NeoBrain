@@ -101,6 +101,10 @@ function initializeApp() {
   newRoundBtn.addEventListener('click', newRound);
   resetBtn.addEventListener('click', resetScores);
   backBtn.addEventListener('click', () => {
+    // Clear room code and game state when exiting
+    localStorage.removeItem('familyfeud_roomcode');
+    localStorage.removeItem('familyfeud_gamestate_' + roomCode);
+    localStorage.removeItem('familyfeud_role');
     window.location.href = 'http://localhost:8000';
   });
 

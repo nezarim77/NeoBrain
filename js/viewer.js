@@ -51,6 +51,9 @@ function initializeViewer() {
   if (backViewerBtn) {
     backViewerBtn.addEventListener('click', () => {
       console.log('Back button clicked');
+      // Clear room code when exiting viewer
+      localStorage.removeItem('familyfeud_roomcode');
+      localStorage.removeItem('familyfeud_role');
       window.location.href = 'http://localhost:8000';
     });
   }
