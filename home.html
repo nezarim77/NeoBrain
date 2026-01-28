@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeoBrain</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎮NeoBrain</h1>
+      <p>Bentuk Tim dan Tebak Jawaban Bersama!</p>
+    </header>
+
+    <main>
+      <div class="menu-grid">
+        <!-- HOST MENU -->
+        <div class="menu-card host-card">
+          <div class="icon">👨‍💼</div>
+          <h2>MODE HOST</h2>
+          <p>Kendalikan permainan, atur soal, dan lihat skor</p>
+          
+          <div class="host-options">
+            <button class="btn-primary" onclick="goToCreateRoom()">
+              Buat Room Baru
+            </button>
+            <button class="btn-secondary" onclick="goToExistingRoom()">
+              Masuk Room Ada
+            </button>
+          </div>
+
+          <div class="info-box">
+            <strong>Fitur:</strong>
+            <ul>
+              <li>Buat room dengan kode unik</li>
+              <li>Kelola soal dan jawaban</li>
+              <li>Kontrol pertanyaan</li>
+              <li>Kelola skor tim</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- VIEWER MENU -->
+        <div class="menu-card viewer-card">
+          <div class="icon">👥</div>
+          <h2>MODE VIEWER</h2>
+          <p>Tonton pertanyaan dan jawaban secara real-time</p>
+          
+          <div class="viewer-options">
+            <input type="text" id="roomCodeInput" placeholder="Masukkan kode room..." maxlength="6">
+            <button class="btn-primary" onclick="joinRoom()">
+              Join Room
+            </button>
+          </div>
+
+          <div class="info-box">
+            <strong>Fitur:</strong>
+            <ul>
+              <li>Lihat pertanyaan real-time</li>
+              <li>Tonton jawaban dibongkar</li>
+              <li>Lihat skor kedua tim</li>
+              <li>Sinkronisasi otomatis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Masukkan kode room yang diberikan host untuk bergabung sebagai viewer</p>
+    </footer>
+  </div>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

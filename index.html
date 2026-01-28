@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeoBrain Host</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>NeoBrain</h1>
+    <p class="subtitle">Mode Host: pilih pertanyaan, bongkar jawaban, beri poin</p>
+    <div class="room-info">
+      <span class="label">Room Code:</span>
+      <span class="code" id="roomCode">-</span>
+      <button id="copyCodeBtn" class="copy-btn">📋 Copy</button>
+    </div>
+  </header>
+  <main>
+    <aside class="scoreboard">
+      <div class="team" id="teamA">
+        <h2>Team A</h2>
+        <div class="score" id="scoreA">0</div>
+        <button class="edit-score-btn" onclick="openEditScoreModal('A')">✎ Edit</button>
+      </div>
+      <div class="team" id="teamB">
+        <h2>Team B</h2>
+        <div class="score" id="scoreB">0</div>
+        <button class="edit-score-btn" onclick="openEditScoreModal('B')">✎ Edit</button>
+      </div>
+      <div class="controls">
+        <button id="newRoundBtn">Mulai Round Baru</button>
+        <button id="resetBtn">Reset Skor</button>
+        <button id="backBtn">← Kembali ke Menu</button>
+      </div>
+    </aside>
+
+    <section class="board">
+      <div class="panel top">
+        <label for="questionSelect">Pilih Pertanyaan:</label>
+        <select id="questionSelect"></select>
+        <button id="loadQuestionBtn">Muat</button>
+        <button id="addCustomBtn" class="btn-add">+ Buat Soal Baru</button>
+      </div>
+
+      <div class="panel question">
+        <h2 id="questionText">(Pertanyaan belum dipilih)</h2>
+        <div class="answers" id="answersList"></div>
+      </div>
+
+      <div class="panel hostControls">
+        <button id="revealNextBtn">Bongkar Jawaban Berikutnya</button>
+        <button id="strikeBtn">X (Strike)</button>
+        <button id="awardA">Berikan ke Team A</button>
+        <button id="awardB">Berikan ke Team B</button>
+      </div>
+
+      <div class="panel info">
+        <div>Strikes: <span id="strikes">0</span>/3</div>
+        <div>Jawaban terungkap: <span id="revealedCount">0</span>/<span id="totalAnswers">0</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Dibuat untuk demo lokal — Family Feud style</small>
+  </footer>
+
+  <!-- Modal Buat Soal Custom -->
+  <div id="customQuestionModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Buat Soal Baru</h2>
+        <button class="close-btn" onclick="closeCustomModal()">×</button>
+      </div>
+      
+      <form id="customQuestionForm">
+        <div class="form-group">
+          <label for="customQuestion">Pertanyaan:</label>
+          <input type="text" id="customQuestion" placeholder="Masukkan pertanyaan..." required>
+        </div>
+
+        <div class="form-group">
+          <label>Jawaban:</label>
+          <div id="answersContainer"></div>
+          <button type="button" class="btn-secondary" onclick="addAnswerField()">+ Tambah Jawaban</button>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="closeCustomModal()">Batal</button>
+          <button type="submit" class="btn-primary">Simpan Soal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Edit Skor -->
+  <div id="editScoreModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit Skor <span id="editTeamName">Team A</span></h2>
+        <button class="close-btn" onclick="closeEditScoreModal()">×</button>
+      </div>
+      
+      <div class="form-group">
+        <label for="scoreInput">Skor Baru:</label>
+        <input type="number" id="scoreInput" min="0" placeholder="Masukkan skor..." required>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeEditScoreModal()">Batal</button>
+        <button type="button" class="btn-primary" onclick="saveEditScore()">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

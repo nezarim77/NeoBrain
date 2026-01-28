@@ -1,0 +1,197 @@
+[
+  {
+    "question":"Sebutkan brand terkaya di dunia",
+    "answers":[
+      {"text":"Apple","points":70},
+      {"text":"Microsoft","points":50},
+      {"text":"Amazon","points":40},
+      {"text":"Google","points":35},
+      {"text":"Samsung","points":30},
+      {"text":"Toyota","points":25},
+      {"text":"Mercedes-Benz","points":20},
+      {"text":"Coca-Cola","points":15},
+      {"text":"Nike","points":10},
+      {"text":"BMW","points":5}
+    ]
+  },
+  {
+    "question":"Sebutkan inovasi teknologi paling berpengaruh di dunia",
+    "answers":[
+      {"text":"Internet","points":70},
+      {"text":"Listrik","points":50},
+      {"text":"Telepon","points":40},
+      {"text":"AI","points":35},
+      {"text":"Mesin Uap","points":30},
+      {"text":"Komputer","points":25},
+      {"text":"GPS","points":20},
+      {"text":"Cloud Computing","points":15},
+      {"text":"Media Sosial","points":10},
+      {"text":"Roda","points":5}
+    ]
+  },
+  {
+    "question": "Sebutkan 10 negara paling maju teknologinya",
+    "answers": [
+      {"text":"Amerika Serikat","points":70},
+      {"text":"China","points":50},
+      {"text":"Jepang","points":40},
+      {"text":"Korea Selatan","points":35},
+      {"text":"Jerman","points":30},
+      {"text":"Inggris","points":25},
+      {"text":"Singapura","points":20},
+      {"text":"Israel","points":15},
+      {"text":"Kanada","points":10},
+      {"text":"Finlandia","points":5}
+    ]
+  },
+  {
+    "question": "Sebutkan 10 profesi yang cocok untuk introvert",
+    "answers": [
+      {"text":"Programmer","points":70},
+      {"text":"Data Analyst","points":50},
+      {"text":"Designer","points":40},
+      {"text":"Penulis","points":35},
+      {"text":"Editor","points":30},
+      {"text":"Researcher","points":25},
+      {"text":"Cybersecurity","points":20},
+      {"text":"Game Developer","points":15},
+      {"text":"Animator","points":10},
+      {"text":"Cloud Engineer","points":5}
+    ]
+  },
+  {
+    "question": "Sebutkan 10 bahasa pemrograman paling populer",
+    "answers": [
+      {"text":"Python","points":70},
+      {"text":"JavaScript","points":50},
+      {"text":"Java","points":40},
+      {"text":"C","points":35},
+      {"text":"C++","points":30},
+      {"text":"C#","points":25},
+      {"text":"Typescript","points":20},
+      {"text":"PHP","points":15},
+      {"text":"Go","points":10},
+      {"text":"Kotlin","points":5}
+    ]
+  },
+  {
+    "question": "Sebutkan 10 game mobile yang paling banyak diunduh",
+    "answers": [
+      {"text":"Subway Surfers","points":70},
+      {"text":"Candy Crush Saga","points":50},
+      {"text":"Hill Climb Racing","points":40},
+      {"text":"My Talking Tom","points":35},
+      {"text":"PUBG Mobile","points":30},
+      {"text":"Free Fire","points":25},
+      {"text":"8 Ball Pool","points":20},
+      {"text":"Temple Run 2","points":15},
+      {"text":"Ludo King","points":10},
+      {"text":"Clash of Clans","points":5}
+    ]
+  },
+  {
+    "question": "Sebutkan 10 teori konspirasi paling terkenal",
+    "answers": [
+      {"text":"Area 51","points":70},
+      {"text":"Illuminati","points":50},
+      {"text":"Flat Earth","points":40},
+      {"text":"Moon Landing Hoax","points":35},
+      {"text":"New World Order","points":30},
+      {"text":"5G dan Kontrol Pikiran","points":25},
+      {"text":"Pembunuhan JFK","points":20},
+      {"text":"COVID-19","points":15},
+      {"text":"Elite Reptil","points":10},
+      {"text":"Chemtrails","points":5}
+    ]
+  },
+  {
+    "question": "Sebutkan 10 fitur aplikasi yang wajib ada",
+    "answers": [
+      {"text":"Dark Mode","points":70},
+      {"text":"Fitur Search","points":50},
+      {"text":"Notifikasi","points":40},
+      {"text":"Auto Save","points":35},
+      {"text":"Login Cepat","points":30},
+      {"text":"Responsive UI","points":25},
+      {"text":"Mode Offline","points":20},
+      {"text":"Keamanan Data","points":15},
+      {"text":"Cloud Sync","points":10},
+      {"text":"Performa Ringan","points":5}
+    ]
+  },
+  {
+    "question":"Sebutkan top 10 anime paling difavoritkan di situs Myanimelist",
+    "answers":[
+      {"text":"One Piece","points":70},
+      {"text":"Fullmetal Alchemist: Brotherhood","points":50},
+      {"text":"Hunter x Hunter","points":40},
+      {"text":"Steins;Gate","points":35},
+      {"text":"Attack on Titan","points":30},
+      {"text":"Death Note","points":25},
+      {"text":"Naruto Shippuden","points":20},
+      {"text":"Evangelion","points":15},
+      {"text":"Code Geass","points":10},
+      {"text":"Jujutsu Kaisen","points":5}
+    ]
+  },
+  {
+    "question":"Sebutkan ",
+    "answers":[
+      {"text":"","points":70},
+      {"text":"","points":50},
+      {"text":"","points":40},
+      {"text":"","points":35},
+      {"text":"","points":30},
+      {"text":"","points":25},
+      {"text":"","points":20},
+      {"text":"","points":15},
+      {"text":"","points":10},
+      {"text":"","points":5}
+    ]
+  },
+  {
+    "question":"Sebutkan ",
+    "answers":[
+      {"text":"","points":70},
+      {"text":"","points":50},
+      {"text":"","points":40},
+      {"text":"","points":35},
+      {"text":"","points":30},
+      {"text":"","points":25},
+      {"text":"","points":20},
+      {"text":"","points":15},
+      {"text":"","points":10},
+      {"text":"","points":5}
+    ]
+  },
+  {
+    "question":"Sebutkan ",
+    "answers":[
+      {"text":"","points":70},
+      {"text":"","points":50},
+      {"text":"","points":40},
+      {"text":"","points":35},
+      {"text":"","points":30},
+      {"text":"","points":25},
+      {"text":"","points":20},
+      {"text":"","points":15},
+      {"text":"","points":10},
+      {"text":"","points":5}
+    ]
+  },
+  {
+    "question":"Sebutkan ",
+    "answers":[
+      {"text":"","points":70},
+      {"text":"","points":50},
+      {"text":"","points":40},
+      {"text":"","points":35},
+      {"text":"","points":30},
+      {"text":"","points":25},
+      {"text":"","points":20},
+      {"text":"","points":15},
+      {"text":"","points":10},
+      {"text":"","points":5}
+    ]
+  }
+]

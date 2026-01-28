@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeoBrain Viewer</title>
+  <link rel="stylesheet" href="css/viewer.css">
+</head>
+<body>
+  <header>
+    <h1>🎮 Family Feud</h1>
+    <p class="subtitle">Mode Viewer - Tonton Pertanyaan & Jawaban</p>
+    <div class="room-info" id="roomStatus">
+      <span class="label">Room:</span>
+      <span class="code" id="viewerRoomCode">-</span>
+      <span class="status-text" id="connectionStatus">Menghubungkan...</span>
+    </div>
+  </header>
+  <main>
+    <section class="scoreboard">
+      <div class="team teamA">
+        <h2 id="teamAName">Team A</h2>
+        <div class="score" id="scoreA">0</div>
+      </div>
+      <div class="divider"></div>
+      <div class="team teamB">
+        <h2 id="teamBName">Team B</h2>
+        <div class="score" id="scoreB">0</div>
+      </div>
+    </section>
+
+    <section class="board">
+      <div class="question-box">
+        <h2 id="questionText">(Menunggu pertanyaan...)</h2>
+      </div>
+
+      <div class="answers-grid" id="answersGrid"></div>
+
+      <div class="game-info">
+        <div class="info-item">
+          <span class="label">Strikes:</span>
+          <span class="value" id="strikes">0</span>/3
+        </div>
+        <div class="info-item">
+          <span class="label">Jawaban Terungkap:</span>
+          <span class="value" id="revealed">0</span>/<span class="value" id="total">0</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="backViewerBtn">← Kembali ke Menu</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Update real-time setiap 2 detik</small>
+  </footer>
+  <script src="js/viewer.js"></script>
+</body>
+</html>
