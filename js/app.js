@@ -302,9 +302,6 @@ function resetScores(){
 // Small UX: click on an answer to toggle reveal
 // (Moved to initializeApp function)
 
-// Display room code
-roomCodeEl.textContent = roomCode;
-
 // Custom Question Functions
 function openCustomModal() {
   customQuestionInput.value = '';
