@@ -7,7 +7,7 @@ import re
 from urllib.parse import urlparse, parse_qs
 import threading
 
-PORT = 8000
+PORT = int(os.environ.get('PORT', '8000'))
 
 # Global room storage: {roomCode: gameState}
 rooms = {}
@@ -55,6 +55,7 @@ class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         
         with rooms_lock:
             state = rooms.get(room_code)
+        print(f"[API] GET state for {room_code}: {'found' if state else 'empty'}")
         
         self.send_response(200)
         self.send_header('Content-Type', 'application/json')
@@ -83,7 +84,7 @@ class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             state = json.loads(body.decode('utf-8'))
             with rooms_lock:
                 rooms[room_code] = state
-            
+            print(f"[API] POST state for {room_code}: type={type(state)}, keys={list(state.keys()) if isinstance(state, dict) else 'N/A'}")
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')

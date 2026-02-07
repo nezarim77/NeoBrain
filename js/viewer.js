@@ -107,11 +107,14 @@ async function fetchGameStateFromServer() {
   try {
     const baseUrl = window.location.origin;
     const apiUrl = `${baseUrl}/api/rooms/${roomCode}/state`;
+    console.log('Attempting fetch from server:', apiUrl);
     const response = await fetch(apiUrl);
     if (response.ok) {
       const state = await response.json();
       console.log('Fetched state from server:', state);
       return state;
+    } else {
+      console.warn('Server responded with non-OK status', response.status);
     }
   } catch (e) {
     console.warn('Failed to fetch state from server:', e);
