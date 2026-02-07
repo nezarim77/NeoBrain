@@ -155,6 +155,22 @@ function initializeApp() {
 
 function saveState() {
   localStorage.setItem(STATE_KEY, JSON.stringify(state));
+  syncStateToServer(); // Also sync to server
+}
+
+function syncStateToServer() {
+  const baseUrl = window.location.origin;
+  const apiUrl = `${baseUrl}/api/rooms/${roomCode}/state`;
+  
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(state)
+  }).catch(err => {
+    console.warn('Failed to sync state to server:', err);
+  });
 }
 
 function animateScore(element) {

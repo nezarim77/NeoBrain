@@ -59,8 +59,8 @@ function initializeViewer() {
   }
 
   // Check for game state periodically
-  function checkConnection() {
-    const state = getGameState();
+  async function checkConnection() {
+    const state = await getGameStateWithFallback();
     console.log('Checking connection. State:', state);
     if (state) {
       connectionStatusEl.textContent = '✓ Terhubung';
@@ -71,15 +71,18 @@ function initializeViewer() {
     }
   }
 
-  checkConnection();
+  // Initial check and first render
+  (async () => {
+    await checkConnection();
+    const initialState = await getGameStateWithFallback();
+    renderState(initialState);
+  })();
+  
   // Check connection every 2 seconds along with polling
-  setInterval(checkConnection, 2000);
-
-  // Initial load
-  renderState(getGameState());
+  setInterval(() => checkConnection(), 2000);
 
   // Start auto-polling (always on)
-  pollInterval = setInterval(pollUpdates, 2000);
+  pollInterval = setInterval(() => pollUpdates(), 2000);
 
   // Cleanup
   window.addEventListener('beforeunload', () => {
@@ -99,17 +102,45 @@ function getStateKey() {
   return `familyfeud_gamestate_${roomCode}`;
 }
 
+// Fetch game state from server (preferred method)
+async function fetchGameStateFromServer() {
+  try {
+    const baseUrl = window.location.origin;
+    const apiUrl = `${baseUrl}/api/rooms/${roomCode}/state`;
+    const response = await fetch(apiUrl);
+    if (response.ok) {
+      const state = await response.json();
+      console.log('Fetched state from server:', state);
+      return state;
+    }
+  } catch (e) {
+    console.warn('Failed to fetch state from server:', e);
+  }
+  return null;
+}
+
 function getGameState() {
   try {
     const key = getStateKey();
     console.log('Looking for state with key:', key);
     const stored = localStorage.getItem(key);
-    console.log('Found state:', stored);
+    console.log('Found state in localStorage:', stored);
     return stored ? JSON.parse(stored) : null;
   } catch (e) {
     console.error('Gagal membaca state:', e);
     return null;
   }
+}
+
+// Get game state (try server first, then fallback to localStorage)
+async function getGameStateWithFallback() {
+  // Try to fetch from server first
+  let state = await fetchGameStateFromServer();
+  // If server doesn't have it, fall back to localStorage
+  if (!state) {
+    state = getGameState();
+  }
+  return state;
 }
 
 function renderState(state) {
@@ -162,8 +193,8 @@ function renderState(state) {
   }
 }
 
-function pollUpdates() {
-  const state = getGameState();
+async function pollUpdates() {
+  const state = await getGameStateWithFallback();
   
   if (state && JSON.stringify(state) !== JSON.stringify(lastState)) {
     renderState(state);
